@@ -1,1 +1,195 @@
-{"trained_at_utc": "2026-05-12 13:07:50", "features": ["category", "market_type", "indicator", "trend_dir", "score", "rsi", "body", "ema50", "ema200", "atr", "dist", "relative_momentum", "expiry_min", "symbol_enc", "side_enc", "raw_market_type_enc"], "encoders": {"category": {"UNKNOWN": 0, "🏆 شارة ذهبية جيدة": 1, "🏆 شارة ذهبية عادية": 2, "🏆 شارة ذهبية ممتازة": 3, "💎 شارة ماسية جيدة": 4, "💎 شارة ماسية عادية": 5, "💎 شارة ماسية ممتازة": 6}, "market_type": {"UNKNOWN": 0, "RANGING": 1, "TRENDING": 2}, "indicator": {"UNKNOWN": 0, "EMA50 Pullback + EMA50/EMA200 + RSI/ATR": 1, "RSI Extremes + RSI/ATR": 2}, "trend_dir": {"UNKNOWN": 0, "DOWN": 1, "OVERBOUGHT": 2, "OVERSOLD": 3, "UP": 4}, "symbol_enc": {"EURGBP-OTC": 0, "EURJPY-OTC": 1, "EURUSD-OTC": 2, "GBPJPY-OTC": 3, "GBPUSD-OTC": 4, "USDCHF-OTC": 5}, "side_enc": {"CALL": 0, "PUT": 1, "UNKNOWN": 0}, "raw_market_type_enc": {"UNKNOWN": 0, "RANGING": 1, "TRENDING": 2}}, "metrics": {"1": {"auc": 0.6264704797728362, "best_thr": 0.7, "n_rows": 800, "n_splits": 3, "time_budget_fold_sec": 120}, "2": {"auc": 0.5879996316080309, "best_thr": 0.65, "n_rows": 800, "n_splits": 3, "time_budget_fold_sec": 120}, "3": {"auc": 0.5923288240454315, "best_thr": 0.65, "n_rows": 800, "n_splits": 3, "time_budget_fold_sec": 120}, "4": {"auc": 0.6175144955101383, "best_thr": 0.65, "n_rows": 800, "n_splits": 3, "time_budget_fold_sec": 120}, "5": {"auc": 0.5899919609597029, "best_thr": 0.65, "n_rows": 800, "n_splits": 3, "time_budget_fold_sec": 120}}}
+{
+  "feature_version": "V2.1_WITH_TREND",
+  "trained_at_utc": "2026-05-28 18:46:22",
+  "features": [
+    "side_put",
+    "sym_EURUSD",
+    "sym_EURGBP",
+    "sym_GBPUSD",
+    "sym_EURJPY",
+    "sym_GBPJPY",
+    "sym_USDCHF",
+    "mkt_TRENDING",
+    "mkt_RANGING",
+    "mkt_VOLATILE",
+    "mkt_SLEEPING",
+    "mkt_TRANSITION",
+    "raw_TRENDING",
+    "raw_RANGING",
+    "raw_VOLATILE",
+    "raw_SLEEPING",
+    "raw_TRANSITION",
+    "td_UP",
+    "td_DOWN",
+    "td_OVERSOLD",
+    "td_OVERBOUGHT",
+    "ind_ema_pullback",
+    "ind_rsi_extremes",
+    "ind_other",
+    "cat_diamond",
+    "cat_gold",
+    "tier_excellent",
+    "tier_good",
+    "tier_normal",
+    "ema_trend_up",
+    "with_trend",
+    "score",
+    "rsi",
+    "body",
+    "relative_momentum",
+    "trend_strength",
+    "atr_percentile",
+    "slope50_atr",
+    "slope200_atr",
+    "session_enc",
+    "volatility_regime"
+  ],
+  "encoders": {},
+  "metrics": {
+    "1": {
+      "auc": 0.4990651803188325,
+      "best_thr": 0.6399999999999999,
+      "net_oof": -21.6,
+      "accepted_rate": 0.056896551724137934,
+      "winrate_accepted": 0.43434343434343436,
+      "n_accepted": 99,
+      "n_rows": 2092,
+      "n_splits": 5,
+      "gap_sec": 300,
+      "label": "direction_only_weighted_plus_with_trend",
+      "payout": 0.8,
+      "last_n_signals": 0,
+      "last_n_per_expiry": 0,
+      "thr_search": {
+        "low": 0.58,
+        "high": 0.95,
+        "steps": 38
+      },
+      "min_trades_acc": 80,
+      "min_acc_rate": 0.0,
+      "weights": {
+        "neutral_abs_m_lt": 0.1,
+        "neutral_weight": 0.05,
+        "w_min": 0.05,
+        "w_max": 2.0
+      },
+      "final_rounds": 200
+    },
+    "2": {
+      "auc": 0.523852657004831,
+      "best_thr": 0.6,
+      "net_oof": -10.0,
+      "accepted_rate": 0.11954022988505747,
+      "winrate_accepted": 0.5288461538461539,
+      "n_accepted": 208,
+      "n_rows": 2092,
+      "n_splits": 5,
+      "gap_sec": 300,
+      "label": "direction_only_weighted_plus_with_trend",
+      "payout": 0.8,
+      "last_n_signals": 0,
+      "last_n_per_expiry": 0,
+      "thr_search": {
+        "low": 0.58,
+        "high": 0.95,
+        "steps": 38
+      },
+      "min_trades_acc": 80,
+      "min_acc_rate": 0.0,
+      "weights": {
+        "neutral_abs_m_lt": 0.1,
+        "neutral_weight": 0.05,
+        "w_min": 0.05,
+        "w_max": 2.0
+      },
+      "final_rounds": 200
+    },
+    "3": {
+      "auc": 0.4944373096782736,
+      "best_thr": 0.63,
+      "net_oof": -15.799999999999997,
+      "accepted_rate": 0.059770114942528735,
+      "winrate_accepted": 0.47115384615384615,
+      "n_accepted": 104,
+      "n_rows": 2092,
+      "n_splits": 5,
+      "gap_sec": 300,
+      "label": "direction_only_weighted_plus_with_trend",
+      "payout": 0.8,
+      "last_n_signals": 0,
+      "last_n_per_expiry": 0,
+      "thr_search": {
+        "low": 0.58,
+        "high": 0.95,
+        "steps": 38
+      },
+      "min_trades_acc": 80,
+      "min_acc_rate": 0.0,
+      "weights": {
+        "neutral_abs_m_lt": 0.1,
+        "neutral_weight": 0.05,
+        "w_min": 0.05,
+        "w_max": 2.0
+      },
+      "final_rounds": 200
+    },
+    "4": {
+      "auc": 0.5065796089681163,
+      "best_thr": 0.61,
+      "net_oof": -11.399999999999999,
+      "accepted_rate": 0.05,
+      "winrate_accepted": 0.4827586206896552,
+      "n_accepted": 87,
+      "n_rows": 2092,
+      "n_splits": 5,
+      "gap_sec": 300,
+      "label": "direction_only_weighted_plus_with_trend",
+      "payout": 0.8,
+      "last_n_signals": 0,
+      "last_n_per_expiry": 0,
+      "thr_search": {
+        "low": 0.58,
+        "high": 0.95,
+        "steps": 38
+      },
+      "min_trades_acc": 80,
+      "min_acc_rate": 0.0,
+      "weights": {
+        "neutral_abs_m_lt": 0.1,
+        "neutral_weight": 0.05,
+        "w_min": 0.05,
+        "w_max": 2.0
+      },
+      "final_rounds": 200
+    },
+    "5": {
+      "auc": 0.49776691164012193,
+      "best_thr": 0.63,
+      "net_oof": -5.799999999999997,
+      "accepted_rate": 0.04885057471264368,
+      "winrate_accepted": 0.5176470588235295,
+      "n_accepted": 85,
+      "n_rows": 2092,
+      "n_splits": 5,
+      "gap_sec": 300,
+      "label": "direction_only_weighted_plus_with_trend",
+      "payout": 0.8,
+      "last_n_signals": 0,
+      "last_n_per_expiry": 0,
+      "thr_search": {
+        "low": 0.58,
+        "high": 0.95,
+        "steps": 38
+      },
+      "min_trades_acc": 80,
+      "min_acc_rate": 0.0,
+      "weights": {
+        "neutral_abs_m_lt": 0.1,
+        "neutral_weight": 0.05,
+        "w_min": 0.05,
+        "w_max": 2.0
+      },
+      "final_rounds": 200
+    }
+  }
+}
